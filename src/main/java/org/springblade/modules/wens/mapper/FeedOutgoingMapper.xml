@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.springblade.modules.wens.mapper.FeedOutgoingMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="feedOutgoingResultMap" type="org.springblade.modules.wens.entity.FeedOutgoing">
+        <id column="id" property="id"/>
+        <result column="org" property="org"/>
+        <result column="car_plate" property="carPlate"/>
+        <result column="car_barn" property="carBarn"/>
+        <result column="spout" property="spout"/>
+        <result column="user_name" property="userName"/>
+        <result column="feed_311" property="feed311"/>
+        <result column="feed_312bf" property="feed312bf"/>
+        <result column="feed_313md" property="feed313md"/>
+        <result column="feed_312at" property="feed312at"/>
+        <result column="feed_314bg" property="feed314bg"/>
+        <result column="feed_315bg" property="feed315bg"/>
+        <result column="feed_313rs" property="feed313rs"/>
+        <result column="feed_332pg" property="feed332pg"/>
+        <result column="feed_333ns" property="feed333ns"/>
+        <result column="feed_335sm" property="feed335sm"/>
+        <result column="status" property="status"/>
+        <result column="outtime" property="outtime"/>
+        <result column="creattime" property="creattime"/>
+        <result column="updatetime" property="updatetime"/>
+    </resultMap>
+
+
+    <select id="selectFeedOutgoingPage" resultType="org.springblade.modules.wens.vo.FeedOutgoingVO">
+        select * from blade_feed_outgoing where 1=1
+        <if test="vo.starttime!= null  and vo.endtime!= null ">
+           and outtime between #{vo.starttime}  and  #{vo.endtime}
+        </if>
+        <if test="vo.starttime!= null  and vo.endtime!= null ">
+            and outtime between #{vo.starttime}  and  #{vo.endtime}
+        </if>
+    </select>
+
+</mapper>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.springblade.modules.wens.mapper.FeedKindMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="feedKindResultMap" type="org.springblade.modules.wens.entity.FeedKind">
+        <id column="id" property="id"/>
+        <result column="feed_kind" property="feedKind"/>
+        <result column="feed_factory" property="feedFactory"/>
+        <result column="is_deleted" property="isDeleted"/>
+        <result column="creattime" property="creattime"/>
+        <result column="updatetime" property="updatetime"/>
+    </resultMap>
+
+
+    <select id="selectFeedKindPage" resultMap="feedKindResultMap">
+        select * from blade_feed_kind where is_deleted = 0
+    </select>
+
+</mapper>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.springblade.modules.wens.mapper.FeedCarMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="feedCarResultMap" type="org.springblade.modules.wens.entity.FeedCar">
+        <id column="id" property="id"/>
+        <result column="car_plate" property="carPlate"/>
+        <result column="car_barn" property="carBarn"/>
+        <result column="car_barn_load" property="carBarnLoad"/>
+        <result column="car_load" property="carLoad"/>
+        <result column="driver_name" property="driverName"/>
+        <result column="driver_phone" property="driverPhone"/>
+        <result column="car_addr" property="carAddr"/>
+        <result column="is_delete" property="isDelete"/>
+        <result column="creattime" property="creattime"/>
+        <result column="updatetime" property="updatetime"/>
+    </resultMap>
+
+
+    <select id="selectFeedCarPage" resultMap="feedCarResultMap">
+        select * from blade_feed_car where is_delete = 0
+    </select>
+
+</mapper>
